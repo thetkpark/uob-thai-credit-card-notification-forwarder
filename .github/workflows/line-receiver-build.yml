@@ -31,5 +31,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./line-receiver
-          push: true
+          push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
