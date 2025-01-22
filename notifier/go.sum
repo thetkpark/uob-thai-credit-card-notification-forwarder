@@ -32,6 +32,8 @@ github.com/stretchr/testify v1.8.0 h1:pSgiaMZlXftHpm5L7V1+rVB+AZJydKsMxsQBIJw4PK
 github.com/stretchr/testify v1.8.0/go.mod h1:yNjHg4UonilssWZ8iaSj1OCr/vHnekPRkoO+kdMU+MU=
 github.com/thetkpark/uob-thai-credit-card-notification-common v0.0.0-20250122020623-544e49a8d7b1 h1:aUUdLQ6DKOWqPUZgWRCmQmX8e2/4mSJTzRXFdzxUVt0=
 github.com/thetkpark/uob-thai-credit-card-notification-common v0.0.0-20250122020623-544e49a8d7b1/go.mod h1:+9GRV8mU4oZr+tbPwtCotdX0JKVqNix5yLsCq4iyZK0=
+github.com/thetkpark/uob-thai-credit-card-notification-common v0.0.0-20250122023455-cf2a5c22e724 h1:wZOJK46XLaC0ypHzIC097w/E4P0LUAUZY6fUpQPK3ck=
+github.com/thetkpark/uob-thai-credit-card-notification-common v0.0.0-20250122023455-cf2a5c22e724/go.mod h1:uU3N4SbGz7aIeZGiHGBxY6pxr9tamUYns7XiLE7fGHk=
 github.com/valyala/bytebufferpool v1.0.0 h1:GqA5TC/0021Y/b9FG4Oi9Mr3q7XYx6KllzawFIhcdPw=
 github.com/valyala/bytebufferpool v1.0.0/go.mod h1:6bBcMArwyJ5K/AmCkWv1jt77kVWyCJ6HpOuEn7z0Csc=
 go.uber.org/atomic v1.4.0 h1:cxzIVoETapQEqDhQu3QfnvXAV4AlzcvUCxkVUFw3+EU=

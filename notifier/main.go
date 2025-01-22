@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"github.com/GoogleCloudPlatform/functions-framework-go/functions"
 	v2 "github.com/cloudevents/sdk-go/v2"
-	"github.com/google/uuid"
 	"github.com/thetkpark/uob-thai-credit-card-notification-common/logger"
+	"github.com/thetkpark/uob-thai-credit-card-notification-common/trace"
 	"github.com/thetkpark/uob-thai-credit-card-notification-forwarder/notifier/config"
 	"github.com/thetkpark/uob-thai-credit-card-notification-forwarder/notifier/handler"
 	"github.com/thetkpark/uob-thai-credit-card-notification-forwarder/notifier/model"
@@ -36,11 +36,8 @@ func init() {
 			return nil
 		}
 
-		if msg.Message.Attributes == nil || msg.Message.Attributes["x-correlation-id"] == "" {
-			ctx = logger.AppendCtxValue(ctx, slog.String("x-correlation-id", uuid.NewString()))
-		} else {
-			ctx = logger.AppendCtxValue(ctx, slog.String("x-correlation-id", msg.Message.Attributes["x-correlation-id"]))
-		}
+		correlationId := trace.GetCorrelationIdFromPubSubAttributes(msg.Message.Attributes)
+		ctx = trace.AddCorrelationIdToLogContext(ctx, correlationId)
 
 		slog.InfoContext(ctx, fmt.Sprintf("Received message: %s", e.ID()))
 
