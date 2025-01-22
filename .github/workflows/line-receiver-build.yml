@@ -28,7 +28,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: thetkpark/cscms-url-shortener
+          images: ghcr.io/${{ github.repository }}-line-receiver
           tags: |
             type=raw,value=latest
             type=sha,format=long,prefix=
