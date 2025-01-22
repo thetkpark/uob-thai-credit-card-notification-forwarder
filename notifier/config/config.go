@@ -2,7 +2,7 @@ package config
 
 import (
 	"github.com/Netflix/go-env"
-	"github.com/thetkpark/uob-thai-credit-card-notification-forwarder/common/logger"
+	"github.com/thetkpark/uob-thai-credit-card-notification-common/logger"
 	"log"
 )
 

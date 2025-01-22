@@ -7,7 +7,7 @@ import (
 	"github.com/GoogleCloudPlatform/functions-framework-go/functions"
 	v2 "github.com/cloudevents/sdk-go/v2"
 	"github.com/google/uuid"
-	"github.com/thetkpark/uob-thai-credit-card-notification-forwarder/common/logger"
+	"github.com/thetkpark/uob-thai-credit-card-notification-common/logger"
 	"github.com/thetkpark/uob-thai-credit-card-notification-forwarder/notifier/config"
 	"github.com/thetkpark/uob-thai-credit-card-notification-forwarder/notifier/handler"
 	"github.com/thetkpark/uob-thai-credit-card-notification-forwarder/notifier/model"
