@@ -135,6 +135,8 @@ github.com/thetkpark/uob-thai-credit-card-notification-common v0.0.0-20250124155
 github.com/thetkpark/uob-thai-credit-card-notification-common v0.0.0-20250124155845-4bc53cc1ec56/go.mod h1:dQPAtUfj0OXpJD5Wt19yKrsGv0S6Q/QbimK21szJe7w=
 github.com/thetkpark/uob-thai-credit-card-notification-common v0.0.0-20250124160059-a4e72aaadf10 h1:/5CnIzgfVAAhphGUTGcC7V5WmQbaLRNMhTioOHTPW3E=
 github.com/thetkpark/uob-thai-credit-card-notification-common v0.0.0-20250124160059-a4e72aaadf10/go.mod h1:dQPAtUfj0OXpJD5Wt19yKrsGv0S6Q/QbimK21szJe7w=
+github.com/thetkpark/uob-thai-credit-card-notification-common v0.0.0-20250124162026-2cb67623f007 h1:Kt0gWb7k6mkTRwIyyP59M+V6ZMi0xB7T3E+/zdYgQUM=
+github.com/thetkpark/uob-thai-credit-card-notification-common v0.0.0-20250124162026-2cb67623f007/go.mod h1:dQPAtUfj0OXpJD5Wt19yKrsGv0S6Q/QbimK21szJe7w=
 github.com/twitchyliquid64/golang-asm v0.15.1 h1:SU5vSMR7hnwNxj24w34ZyCi/FmDZTkS4MhqMhdFk5YI=
 github.com/twitchyliquid64/golang-asm v0.15.1/go.mod h1:a1lVb/DtPvCB8fslRZhAngC2+aY1QWCk3Cedj/Gdt08=
 github.com/ugorji/go/codec v1.2.12 h1:9LC83zGrHhuUA9l16C9AHXAqEV/2wBQ4nkvumAE65EE=

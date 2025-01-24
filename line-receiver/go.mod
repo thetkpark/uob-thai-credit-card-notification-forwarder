@@ -5,7 +5,7 @@ go 1.23.5
 require (
 	github.com/Netflix/go-env v0.1.2
 	github.com/line/line-bot-sdk-go/v8 v8.10.2
-	github.com/thetkpark/uob-thai-credit-card-notification-common v0.0.0-20250124160059-a4e72aaadf10
+	github.com/thetkpark/uob-thai-credit-card-notification-common v0.0.0-20250124162026-2cb67623f007
 )
 
 require (
