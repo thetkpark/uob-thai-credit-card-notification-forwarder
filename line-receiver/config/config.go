@@ -2,6 +2,7 @@ package config
 
 import (
 	"github.com/thetkpark/uob-thai-credit-card-notification-common/config"
+	"github.com/thetkpark/uob-thai-credit-card-notification-common/kv"
 	"github.com/thetkpark/uob-thai-credit-card-notification-common/logger"
 	"github.com/thetkpark/uob-thai-credit-card-notification-common/publisher"
 )
@@ -11,6 +12,7 @@ type Config struct {
 	LineChannelSecret    string   `env:"LINE_CHANNEL_SECRET"`
 	WhiteListCardNumbers []string `env:"WHITELIST_CARD_NUMBERS"`
 	PubSub               publisher.PubSubConfig
+	Redis                kv.RedisKVConfig
 }
 
 func Init() Config {

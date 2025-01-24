@@ -5,6 +5,7 @@ import (
 	"errors"
 	"github.com/gin-gonic/gin"
 	"github.com/line/line-bot-sdk-go/v8/linebot/webhook"
+	"github.com/thetkpark/uob-thai-credit-card-notification-common/kv"
 	"github.com/thetkpark/uob-thai-credit-card-notification-common/logger"
 	"github.com/thetkpark/uob-thai-credit-card-notification-common/publisher"
 	"github.com/thetkpark/uob-thai-credit-card-notification-forwarder/line-receiver/config"
@@ -35,7 +36,8 @@ func main() {
 	}
 
 	pub := publisher.NewPubSubPublisher(conf.PubSub.ProjectID, conf.PubSub.TopicID)
-	h := handler.NewHandlerImpl(pub, conf.WhiteListCardNumbers)
+	k := kv.NewRedisKV(conf.Redis)
+	h := handler.NewHandlerImpl(pub, k, conf.WhiteListCardNumbers)
 
 	r := gin.New()
 	r.Use(gin.Recovery())
