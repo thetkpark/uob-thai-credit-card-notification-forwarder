@@ -11,3 +11,4 @@ steps:
       - --entry-point=Notifier
       - --gen2
       - --no-allow-unauthenticated
+      - --source=./notifier
