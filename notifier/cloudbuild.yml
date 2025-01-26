@@ -1,0 +1,13 @@
+steps:
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args:
+      - gcloud
+      - functions
+      - deploy
+      - uob-usage-notifier
+      - --region=asia-southeast1
+      - -trigger-topic=uob-usage-notification
+      - --runtime=go123
+      - --entry-point=Notifier
+      - --gen2
+      - --no-allow-unauthenticated
