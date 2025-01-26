@@ -74,6 +74,7 @@ out:
 		slog.InfoContext(ctx, "No new journey")
 		return
 	}
+	slog.InfoContext(ctx, fmt.Sprintf("Found %d new journeys", len(journeys)))
 
 	for _, j := range journeys {
 		msg := commonmodel.UsageNotification{
