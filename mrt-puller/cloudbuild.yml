@@ -5,6 +5,7 @@ steps:
     args: [ 'push', 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/container/uob-usage-notification-forwarder-mrt-puller:$COMMIT_SHA' ]
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
     args:
+      - gcloud
       - run
       - jobs
       - update
