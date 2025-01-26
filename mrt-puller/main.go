@@ -25,7 +25,9 @@ func main() {
 	kv := kv.NewRedisKV(conf.KV)
 	pub := publisher.NewPubSubPublisher(conf.Publisher.ProjectID, conf.Publisher.TopicID)
 
-	ctx := trace.AddCorrelationIdToLogContext(context.Background(), trace.GenerateCorrelationId())
+	correlationId := trace.GenerateCorrelationId()
+	ctx := trace.AddCorrelationIdToLogContext(context.Background(), correlationId)
+	ctx = context.WithValue(ctx, trace.CorrelationIdKey, correlationId)
 
 	latestProcessJourneyID, err := kv.Get(ctx, LatestJourneyKey)
 	if err != nil {
