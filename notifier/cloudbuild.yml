@@ -6,7 +6,7 @@ steps:
       - deploy
       - uob-usage-notifier
       - --region=asia-southeast1
-      - -trigger-topic=uob-usage-notification
+      - --trigger-topic=uob-usage-notification
       - --runtime=go123
       - --entry-point=Notifier
       - --gen2
