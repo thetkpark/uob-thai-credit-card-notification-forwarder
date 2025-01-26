@@ -20,7 +20,7 @@ func NewHandlerImpl(noti notification.Notification) *Impl {
 }
 
 func (h *Impl) HandleUsageNotification(ctx context.Context, req model.UsageNotification) error {
-	msg := fmt.Sprintf("Date: %s\nShop: %s\nAmount: %s", req.Shop, req.Amount, req.Date)
+	msg := fmt.Sprintf("Date: %s\nShop: %s\nAmount: %s", req.Date, req.Shop, req.Amount)
 	if err := h.noti.BroadcastNotification(ctx, msg); err != nil {
 		return err
 	}
