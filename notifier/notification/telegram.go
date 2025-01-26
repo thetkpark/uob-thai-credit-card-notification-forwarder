@@ -20,7 +20,7 @@ func NewTelegramNotification(token string, targetChatIds []string) *TelegramNoti
 		slog.Error("Error creating telegram bot", slog.String("error", err.Error()))
 		log.Fatalln("Error creating telegram bot")
 	}
-	b.Start(context.Background())
+	//b.Start(context.Background())
 	return &TelegramNotification{b: b, targetChatIds: targetChatIds}
 }
 
