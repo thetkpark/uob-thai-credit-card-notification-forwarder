@@ -1,4 +1,4 @@
-name: MRT Puller - Build Docker Image
+name: Line Receiver - Build Docker Image
 
 on:
   pull_request:

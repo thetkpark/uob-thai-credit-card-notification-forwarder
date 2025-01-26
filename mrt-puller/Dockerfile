@@ -5,8 +5,8 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY ./config ./config
-COPY ./handler ./handler
-COPY ./middleware ./middleware
+COPY ./model ./model
+COPY ./mrt ./mrt
 COPY ./main.go .
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o main
 
