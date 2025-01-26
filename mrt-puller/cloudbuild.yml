@@ -1,6 +1,19 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/container/uob-usage-notification-forwarder-mrt-puller:$COMMIT_SHA', '.' ]
+    args: [ 'build', '-t', 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/container/uob-usage-notification-forwarder-mrt-puller:$COMMIT_SHA', './mrt-puller' ]
   - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'push', '-t', 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/container/uob-usage-notification-forwarder-mrt-puller:$COMMIT_SHA' ]
+    args: [ 'push', 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/container/uob-usage-notification-forwarder-mrt-puller:$COMMIT_SHA' ]
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+    args:
+      - run
+      - jobs
+      - update
+      - $_SERVICE_NAME
+      - '--image=asia-southeast1-docker.pkg.dev/$PROJECT_ID/container/uob-usage-notification-forwarder-mrt-puller:$COMMIT_SHA'
+      - '--region=$_DEPLOY_REGION'
+
 images: ['asia-southeast1-docker.pkg.dev/$PROJECT_ID/container/uob-usage-notification-forwarder-mrt-puller']
+
+substitutions:
+  _SERVICE_NAME: uob-usage-notification-forwarder-mrt-puller
+  _DEPLOY_REGION: asia-southeast1
