@@ -1,0 +1,6 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/container/uob-usage-notification-forwarder-mrt-puller:$COMMIT_SHA', '.' ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'push', '-t', 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/container/uob-usage-notification-forwarder-mrt-puller:$COMMIT_SHA' ]
+images: ['asia-southeast1-docker.pkg.dev/$PROJECT_ID/container/uob-usage-notification-forwarder-mrt-puller']
