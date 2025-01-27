@@ -13,6 +13,7 @@ import (
 	"github.com/thetkpark/uob-thai-credit-card-notification-forwarder/mrt-puller/mrt"
 	"log"
 	"log/slog"
+	"time"
 )
 
 const LatestJourneyKey = "latest_journey"
@@ -61,6 +62,9 @@ out:
 			if j.JourneyID == latestProcessJourneyID {
 				break out
 			}
+			if j.TotalAmount == 0 {
+				continue
+			}
 			if exist, err := kv.Exist(ctx, j.JourneyID); err != nil {
 				slog.ErrorContext(ctx, "Error checking existance", slog.String("error", err.Error()))
 			} else if exist {
@@ -90,6 +94,10 @@ out:
 				slog.String("message", fmt.Sprintf("%+v", msg)),
 				slog.String("journey_id", j.JourneyID),
 			)
+		}
+
+		if err := kv.Add(ctx, j.JourneyID, "1", time.Hour*720); err != nil {
+			slog.ErrorContext(ctx, "Error setting journey id", slog.String("error", err.Error()))
 		}
 	}
 
