@@ -68,6 +68,11 @@ func (h Handler) HandleUsageNotificationText(ctx context.Context, text string) {
 		Date:   match[4],
 	}
 
+	if noti.Shop == "MRT-BEM" && noti.Amount == "1.00 THB" {
+		slog.InfoContext(ctx, "Notification is from MRT-BEM initial charge", slog.String("message", text))
+		return
+	}
+
 	if err := h.publisher.PublishMessage(ctx, noti); err != nil {
 		slog.ErrorContext(ctx, "Error publishing message", slog.String("error", err.Error()))
 		return
