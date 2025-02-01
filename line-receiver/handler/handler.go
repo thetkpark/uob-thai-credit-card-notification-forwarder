@@ -20,7 +20,7 @@ type Handler struct {
 }
 
 func NewHandlerImpl(publisher publisher.Publisher, kv kv.KV, whiteListCards []string) *Handler {
-	usageNotiRegex, err := regexp.Compile("^มีการใช้บัตร UOB-(\\d{4}) @(.+) (\\d+\\.\\d{2} THB) วันที่ (\\d{2}/\\d{2})")
+	usageNotiRegex, err := regexp.Compile("^มีการใช้บัตร UOB-(\\d{4}) @(.+) ((?:,?\\d+)+\\.\\d{2} THB) วันที่ (\\d{2}/\\d{2})")
 	if err != nil {
 		log.Fatal(err)
 	}
