@@ -33,6 +33,7 @@ func main() {
 	latestProcessJourneyID, err := kv.Get(ctx, LatestJourneyKey)
 	if err != nil {
 		slog.ErrorContext(ctx, "Error getting latest journey id", err)
+		log.Fatalln("Error getting latest journey id")
 	}
 
 	accessToken, err := m.GetAccessToken(ctx)
